@@ -1,7 +1,5 @@
-
 /* ==========================================================================
    layout.css — estructura, componentes y animaciones
-
    Orden:
    1. Contenedor y parallax
    2. Encabezado y título
@@ -11,578 +9,419 @@
    6. Caja de mensaje y animales
    7. Ajustes responsivos
    8. Accesibilidad
-
-   Clases utilizadas por TypeScript:
-     .es-entrando  → fotografía que aparece
-     .es-saliendo  → fotografía o post-it que desaparece
-     .es-activa    → post-it visible
-     .es-asomado   → animal que se asoma
    ========================================================================== */
 
-
 /* ---------- 1. Contenedor y parallax ---------- */
-
 .mundo {
   position: relative;
   z-index: var(--capa-contenido);
-
   display: grid;
   grid-template-rows: auto 1fr auto;
-
   gap: var(--espacio-l);
-
   min-height: 100vh;
   min-height: 100dvh;
-
   padding:
     max(var(--margen-pagina), env(safe-area-inset-top))
     max(var(--margen-pagina), env(safe-area-inset-right))
     max(var(--margen-pagina), env(safe-area-inset-bottom))
     max(var(--margen-pagina), env(safe-area-inset-left));
 }
-
-/* Movimiento de los elementos según su profundidad.
-   Se utiliza translate para no interferir con transform
-   en las animaciones de fotografías y animales. */
-
+/* Movimiento según la profundidad */
 [data-profundidad] {
   translate: var(--parallax-x, 0px) var(--parallax-y, 0px);
 }
 
-
 /* ---------- 2. Encabezado y título ---------- */
-
 .encabezado {
   justify-self: start;
   max-width: min(100%, 38rem);
 }
-
 .titulo {
   font-size: var(--titulo);
   color: var(--vino);
-
   overflow-wrap: anywhere;
-
   text-shadow:
     0 0.04em 0 rgb(255 247 250 / 0.9),
     0 0.1em 0.45em rgb(184 58 122 / 0.28);
 }
-
 .subtitulo {
   max-width: 38ch;
-
   margin-block-start: var(--espacio-xs);
-
   font-size: var(--texto-m);
   line-height: 1.5;
   color: var(--cafe);
 }
 
-
 /* ---------- 3. Galería y fotografía ---------- */
-
 .galeria {
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-
   gap: var(--espacio-l);
-
   min-width: 0;
 }
-
-/* Marco tipo fotografía instantánea */
-
+/* Marco de fotografía instantánea */
 .foto-marco {
   position: relative;
-
-  inline-size: min(100%, 34rem);
-
+  inline-size: min(100%, 40rem);
   margin: 0;
-
   padding: clamp(0.6rem, 0.4rem + 1vw, 1rem);
-
   background: var(--crema);
   border-radius: var(--radio-m);
   box-shadow: var(--sombra-foto);
-
   rotate: -1.5deg;
 }
-
 /* Fotografía */
-
 .foto {
   display: block;
-
   inline-size: 100%;
-
-  max-block-size: 52vh;
-  max-block-size: 52dvh;
-
+  max-block-size: 58vh;
+  max-block-size: 58dvh;
   object-fit: contain;
-
   border-radius: var(--radio-s);
   background: var(--rosa-nube);
 }
-
-/* Respetar el atributo hidden de la fotografía */
-
+/* Respetar el atributo hidden */
 .foto[hidden] {
   display: none;
 }
-
-/* Entrada de una fotografía nueva */
-
+/* Entrada de fotografía */
 .foto.es-entrando {
   animation: aparecer-foto 300ms var(--ease-suave) both;
 }
-
 @keyframes aparecer-foto {
   from {
     opacity: 0;
     transform: translateY(1.5rem) scale(0.94) rotate(-2deg);
   }
-
   to {
     opacity: 1;
     transform: none;
   }
 }
-
-/* Salida de la fotografía anterior */
-
+/* Salida de fotografía */
 .foto.es-saliendo {
   animation: desaparecer-foto 300ms var(--ease-suave) both;
 }
-
 @keyframes desaparecer-foto {
   from {
     opacity: 1;
     transform: translateY(0) scale(1);
   }
-
   to {
     opacity: 0;
     transform: translateY(-1rem) scale(0.96);
   }
 }
 
-
 /* ---------- 4. Post-its ---------- */
-
+/* Contenedor de los post-its */
 .notas {
   position: absolute;
-
-  top: -1.4rem;
-  right: -1.6rem;
-
-  inline-size: clamp(7.5rem, 30vw, 10.5rem);
+  top: -2rem;
+  right: -2rem;
+  inline-size: clamp(10rem, 28vw, 14rem);
   aspect-ratio: 1;
-
   z-index: var(--capa-nota);
-
   pointer-events: none;
-}
-
-.nota {
+  /* Permite adaptar el texto al tamaño del post-it */
   container-type: inline-size;
- 
+}
+/* Post-it individual */
+.nota {
   position: absolute;
   inset: 0;
- 
   display: grid;
   place-items: center;
- 
-  padding: 1.1rem 0.8rem 0.8rem;
- 
+  padding: 1.4rem 1rem 1rem;
   text-align: center;
- 
-  line-height: 1.15;
   color: var(--cafe);
- 
   background: linear-gradient(
     170deg,
     #fff7bd,
     var(--nota-fondo)
   );
- 
   border-bottom: 2px solid var(--nota-borde);
   border-radius: 0.15rem 0.15rem 0.35rem 0.15rem;
- 
   box-shadow: var(--sombra-nota);
- 
   overflow: hidden;
- 
   transform-origin: 100% 0;
   rotate: 3deg;
- 
   opacity: 0;
   visibility: hidden;
 }
- 
-/* Texto adaptable al ancho del post-it */
+/* Texto adaptable al ancho del contenedor */
 .nota p {
-  font-size: clamp(1.3rem, 9cqw, 2.2rem);
-  line-height: 1.2;
- 
-  text-align: center;
- 
+  width: 100%;
   margin: 0;
-  overflow-wrap: anywhere;
+  font-size: clamp(1.1rem, 10cqi, 1.75rem);
+  line-height: 1.2;
+  font-weight: 600;
+  text-align: center;
+  overflow-wrap: break-word;
+  text-wrap: balance;
 }
- 
-/* Inclinación alternada de los post-its */
+/* Inclinación alternada */
 .nota:nth-child(even) {
   rotate: -3deg;
 }
-
-/* Cinta rosada que sostiene el post-it */
-
+/* Cinta rosada */
 .nota::before {
   content: "";
-
   position: absolute;
-
   top: 0;
   left: 50%;
-
   inline-size: 45%;
   block-size: 1.1rem;
-
   background: rgb(255 93 179 / 0.4);
-
   translate: -50% -35%;
   rotate: -3deg;
 }
-
-/* Post-it que aparece y queda pegado */
-
+/* Post-it que aparece */
 .nota.es-activa {
   opacity: 1;
   visibility: visible;
-
   animation: pegar-nota 700ms var(--ease-rebote) both;
 }
-
-/* Post-it que se despega */
-
+/* Post-it que desaparece */
 .nota.es-saliendo {
   visibility: visible;
-
   animation: arrancar-nota 600ms ease-in both;
 }
-
 @keyframes pegar-nota {
   0% {
     opacity: 0;
     transform: translate(35%, -45%) rotate(16deg) scale(1.3);
   }
-
   50% {
     opacity: 1;
   }
-
   100% {
     opacity: 1;
     transform: none;
   }
 }
-
 @keyframes arrancar-nota {
   0% {
     opacity: 1;
     transform: none;
   }
-
   25% {
     opacity: 1;
     transform: translateY(-3%) rotate(-9deg);
   }
-
   100% {
     opacity: 0;
     transform: translate(50%, -90%) rotate(30deg) scale(0.9);
   }
 }
 
-
 /* ---------- 5. Controles ---------- */
-
 .controles {
   display: flex;
   align-items: center;
   justify-content: center;
-
   gap: var(--espacio-s);
 }
-
 .controles button {
   display: grid;
   place-items: center;
-
   inline-size: 3rem;
   block-size: 3rem;
-
   padding: 0;
-
   font-family: inherit;
   font-size: 1.25rem;
   line-height: 1;
-
   color: var(--vino);
-
   background: rgb(255 247 250 / 0.85);
-
   border: 2px solid var(--rosa-rubor);
   border-radius: 50%;
-
   box-shadow: var(--sombra-suave);
-
   cursor: pointer;
-
   transition:
     transform var(--duracion-corta) var(--ease-suave),
     background-color var(--duracion-corta) var(--ease-suave),
     opacity var(--duracion-corta) var(--ease-suave);
 }
-
-/* Presionar un botón */
-
+/* Presionar botón */
 .controles button:active:not(:disabled) {
   transform: scale(0.92);
 }
-
-/* Hover únicamente en dispositivos que lo soportan */
-
+/* Hover */
 @media (hover: hover) {
   .controles button:hover:not(:disabled) {
     transform: translateY(-2px);
     background: var(--crema);
   }
 }
-
-/* Botones deshabilitados durante una transición */
-
+/* Botones deshabilitados */
 .controles button:disabled {
   opacity: 0.45;
   cursor: not-allowed;
   transform: none;
 }
-
-/* Accesibilidad: foco visible */
-
+/* Foco visible */
 .controles button:focus-visible {
   outline: 3px solid var(--rosa-fuerte);
   outline-offset: 3px;
 }
 
-
 /* ---------- 6. Caja de mensaje y animales ---------- */
-
 /* Contenedor inferior */
-
 .pie {
   position: relative;
-
   justify-self: center;
-
   inline-size: min(100%, 36rem);
 }
-
 /* Caja del mensaje permanente */
-
 .caja-mensaje {
   position: relative;
-
   z-index: 3;
-
   display: block;
-
   padding: var(--espacio-m);
-
   background: rgb(255 247 250 / 0.9);
-
   border: 2px solid var(--rosa-rubor);
   border-radius: var(--radio-l);
-
   box-shadow: var(--sombra-suave);
 }
-
 /* Título de la caja */
-
 .titulo-mensaje {
   margin-block-end: var(--espacio-xs);
-
   font-size: var(--texto-m);
   color: var(--vino);
 }
-
 /* Texto permanente */
-
 #mensaje {
   font-family: var(--fuente-lectura);
   font-size: 1rem;
-
   line-height: 1.6;
-
   color: var(--cafe);
-
   overflow-wrap: anywhere;
 }
-
-/* Franja donde se asoman los animales */
-
+/* Franja de animales */
 .animales {
   position: absolute;
-
   inset-inline: 0;
-
   bottom: calc(100% - 1.2rem);
-
   block-size: 6rem;
-
   z-index: var(--capa-animal);
-
   pointer-events: none;
-
   overflow: hidden;
 }
-
-/* Cada animal individual */
-
+/* Animal individual */
 .animal {
   position: absolute;
-
   bottom: 0;
   left: var(--animal-x, 50%);
-
   inline-size: 7rem;
   block-size: 6rem;
-
   translate: -50% 0;
-
   transform: translateY(105%);
-
   visibility: hidden;
 }
-
-/* Posiciones individuales de los visitantes */
-
+/* Posiciones de los animales */
 .animal[data-animal="gato-calico"] {
   --animal-x: 18%;
 }
-
 .animal[data-animal="gato-atigrado"] {
   --animal-x: 50%;
 }
-
 .animal[data-animal="hamster"] {
   --animal-x: 82%;
 }
-
-/* Imagen SVG del animal */
-
+/* Imagen SVG */
 .animal > img {
   display: block;
-
   inline-size: 100%;
   block-size: 100%;
-
   object-fit: contain;
 }
-
 /* Animal que aparece */
-
 .animal.es-asomado {
   visibility: visible;
-
   animation: asomar 900ms var(--ease-rebote) both;
 }
-
 @keyframes asomar {
   from {
     transform: translateY(105%);
   }
-
   to {
     transform: translateY(0);
   }
 }
 
-
-/* ---------- 7. Ajustes para pantallas pequeñas ---------- */
-
+/* ---------- 7. Ajustes responsivos ---------- */
+/* Teléfonos y pantallas pequeñas */
 @media (max-width: 600px) {
-
   .encabezado {
     max-width: 100%;
   }
-
-  .notas {
-    top: -1.1rem;
-    right: -0.7rem;
-
-    inline-size: clamp(7rem, 29vw, 9rem);
-  }
-
   .foto-marco {
+    inline-size: min(100%, 36rem);
     rotate: -1deg;
   }
-
+  .foto {
+    max-block-size: 48vh;
+    max-block-size: 48dvh;
+  }
+  .notas {
+    top: -1.2rem;
+    right: -0.5rem;
+    inline-size: clamp(9.5rem, 42vw, 12rem);
+  }
+  .nota {
+    padding: 1.2rem 0.8rem 0.8rem;
+  }
+  .nota p {
+    font-size: clamp(1.1rem, 10cqi, 1.55rem);
+  }
   .animal {
     inline-size: 6rem;
     block-size: 5.5rem;
   }
-
   .caja-mensaje {
     padding: var(--espacio-m);
   }
-
 }
 
-/* Celular acostado: poco alto disponible */
-
+/* Celular acostado */
 @media (max-height: 520px) and (orientation: landscape) {
-
   .mundo {
     gap: var(--espacio-s);
   }
-
   .titulo {
     font-size: clamp(2.2rem, 8vh, 3.5rem);
   }
-
   .foto {
     max-block-size: 55vh;
     max-block-size: 55dvh;
   }
-
   .foto-marco {
     inline-size: min(100%, 28rem);
   }
-
+  .notas {
+    inline-size: clamp(9rem, 20vw, 11rem);
+    top: -1rem;
+    right: -1rem;
+  }
+  .nota p {
+    font-size: clamp(1rem, 9cqi, 1.3rem);
+  }
   .pie {
     inline-size: min(100%, 30rem);
   }
-
 }
 
-/* Pantallas muy grandes: evitar que la fotografía se expanda demasiado */
-
+/* Pantallas grandes */
 @media (min-width: 1400px) {
-
   .foto-marco {
     inline-size: min(100%, 40rem);
   }
-
 }
 
-
-/* ---------- 8. Accesibilidad: movimiento reducido ---------- */
-
+/* ---------- 8. Accesibilidad ---------- */
 @media (prefers-reduced-motion: reduce) {
-
   .foto.es-entrando,
   .foto.es-saliendo,
   .nota.es-activa,
@@ -590,9 +429,8 @@
   .animal.es-asomado {
     animation-duration: 1ms;
   }
-
   .controles button {
     transition-duration: 1ms;
   }
-
 }
+ 
