@@ -71,7 +71,7 @@ const COLECCIONES_DE_NOTAS: string[][] = [
   [
     "Tú eres mi moto mami, puedo ser tu carro papi?",
     "Me voy a meter a un jardin a robar claveles para amarte un ramo gigante.",
-    "Mereces ser la chica más feliz del mundo... Me permites hacerte la chica más feliz del mundo?.",
+    "Y si compartimos nuestroz corazones cafes por toda la vida_",
     "Y si te acaricio la espalda sera que puedo llegar a acariciarte el alma?",
     "Nunca quise tener una familia... Hasta que la forme contigo"
   ]
