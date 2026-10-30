@@ -1,8 +1,8 @@
 
-import { iniciarParallax } from "./parallax.js";
-import { iniciarGaleria } from "./gallery.js";
-import { iniciarNotas } from "./notes.js";
-import { iniciarAnimales } from "./animals.js";
+import { iniciarParallax } from "./src/ts/parallax.js";
+import { iniciarGaleria } from "./src/ts/gallery.js";
+import { iniciarNotas } from "./src/ts/notes.js";
+import { iniciarAnimales } from "./src/ts/animals.js";
 
 /**
  * Inicializa todos los módulos de la aplicación.
