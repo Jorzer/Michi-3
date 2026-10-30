@@ -187,52 +187,52 @@
 
 .nota {
   container-type: inline-size;
+ 
   position: absolute;
   inset: 0;
-
+ 
   display: grid;
   place-items: center;
-
+ 
   padding: 1.1rem 0.8rem 0.8rem;
-
+ 
   text-align: center;
-
-  font-size: clamp(0.85rem, 0.78rem + 0.45vw, 1.1rem);
+ 
   line-height: 1.15;
-
   color: var(--cafe);
-
+ 
   background: linear-gradient(
     170deg,
     #fff7bd,
     var(--nota-fondo)
   );
-
+ 
   border-bottom: 2px solid var(--nota-borde);
   border-radius: 0.15rem 0.15rem 0.35rem 0.15rem;
-
+ 
   box-shadow: var(--sombra-nota);
-
+ 
   overflow: hidden;
-
+ 
   transform-origin: 100% 0;
-
   rotate: 3deg;
-
+ 
   opacity: 0;
   visibility: hidden;
 }
-
-/* Evitar márgenes inesperados en los párrafos */
-
+ 
+/* Texto adaptable al ancho del post-it */
 .nota p {
-  font-size: clamp(1.15rem, 8cqw, 2rem);
+  font-size: clamp(1.3rem, 9cqw, 2.2rem);
   line-height: 1.2;
+ 
   text-align: center;
+ 
   margin: 0;
   overflow-wrap: anywhere;
 }
-
+ 
+/* Inclinación alternada de los post-its */
 .nota:nth-child(even) {
   rotate: -3deg;
 }
