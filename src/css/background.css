@@ -1,0 +1,161 @@
+
+/* ==========================================================================
+   background.css — fondo con gradiente animado
+
+   Técnica:
+   - Una base fija.
+   - Dos capas de manchas de color que flotan lentamente.
+   - Animaciones mediante transform para reducir el trabajo de renderizado.
+
+   Integración:
+   - base.css: variables de colores y capas.
+   - index.html: elemento .fondo.
+   ========================================================================== */
+
+
+/* ---------- Fondo principal ---------- */
+
+.fondo {
+  position: fixed;
+  inset: 0;
+
+  z-index: var(--capa-fondo);
+
+  overflow: hidden;
+  contain: paint;
+
+  pointer-events: none;
+
+  /* Gradiente base */
+
+  background:
+    radial-gradient(
+      120% 70% at 100% 110%,
+      rgb(101 67 35 / 0.16),
+      transparent 60%
+    ),
+    linear-gradient(
+      160deg,
+      var(--rosa-nube) 0%,
+      var(--rosa-suave) 55%,
+      var(--rosa-fuerte) 120%
+    );
+}
+
+
+/* ---------- Capas de manchas ---------- */
+
+.fondo::before,
+.fondo::after {
+  content: "";
+
+  position: absolute;
+  inset: -50%;
+
+  will-change: transform;
+}
+
+
+/* ---------- Primera capa ---------- */
+
+.fondo::before {
+  background:
+    radial-gradient(
+      38% 38% at 28% 32%,
+      rgb(255 93 179 / 0.75),
+      transparent 70%
+    ),
+    radial-gradient(
+      34% 34% at 72% 66%,
+      rgb(255 247 250 / 0.8),
+      transparent 70%
+    );
+
+  animation:
+    flotar-a 28s ease-in-out infinite alternate;
+}
+
+
+/* ---------- Segunda capa ---------- */
+
+.fondo::after {
+  background:
+    radial-gradient(
+      36% 36% at 68% 30%,
+      rgb(253 137 195 / 0.8),
+      transparent 70%
+    ),
+    radial-gradient(
+      32% 32% at 30% 70%,
+      rgb(255 194 226 / 0.85),
+      transparent 70%
+    );
+
+  animation:
+    flotar-b 36s ease-in-out infinite alternate;
+}
+
+
+/* ---------- Animaciones ---------- */
+
+@keyframes flotar-a {
+
+  0% {
+    transform:
+      translate3d(-6%, -4%, 0)
+      rotate(0deg)
+      scale(1);
+  }
+
+  100% {
+    transform:
+      translate3d(8%, 6%, 0)
+      rotate(18deg)
+      scale(1.12);
+  }
+
+}
+
+
+@keyframes flotar-b {
+
+  0% {
+    transform:
+      translate3d(7%, 5%, 0)
+      rotate(0deg)
+      scale(1.1);
+  }
+
+  100% {
+    transform:
+      translate3d(-8%, -6%, 0)
+      rotate(-22deg)
+      scale(1);
+  }
+
+}
+
+
+/* ---------- Adaptación para celulares ---------- */
+
+@media (max-width: 600px) {
+
+  .fondo::before,
+  .fondo::after {
+    inset: -70%;
+  }
+
+}
+
+
+/* ---------- Movimiento reducido ---------- */
+
+@media (prefers-reduced-motion: reduce) {
+
+  .fondo::before,
+  .fondo::after {
+    animation: none;
+    will-change: auto;
+  }
+
+}

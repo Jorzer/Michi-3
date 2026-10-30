@@ -1,0 +1,161 @@
+
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta name="theme-color" content="#ff5db3">
+    <meta name="description" content="Un pequeño rincón lleno de recuerdos, cariño y momentos especiales.">
+
+    <title>Nuestro pequeño mundo 💗</title>
+
+    <!-- Estilos principales -->
+    <link rel="stylesheet" href="./src/css/base.css">
+    <link rel="stylesheet" href="./src/css/background.css">
+    <link rel="stylesheet" href="./src/css/layout.css">
+</head>
+
+<body>
+
+    <!-- Fondo animado -->
+    <div class="fondo" aria-hidden="true"></div>
+
+    <!-- Contenedor principal -->
+    <div class="mundo" id="mundo">
+
+        <!-- Encabezado -->
+        <header class="encabezado" data-profundidad="2">
+
+            <h1 class="titulo">
+                Nuestro pequeño mundo
+            </h1>
+
+            <p class="subtitulo">
+                Un lugar donde cada recuerdo tiene algo especial.
+            </p>
+
+        </header>
+
+        <!-- Galería de recuerdos -->
+        <main class="galeria">
+
+            <figure class="foto-marco" data-profundidad="4">
+
+                <img
+                    class="foto"
+                    id="foto"
+                    src=""
+                    alt=""
+                    hidden
+                >
+
+                <!-- Post-its -->
+                <div class="notas" id="notas">
+
+                    <article class="nota" data-nota="1">
+                        <p>Un recuerdo especial...</p>
+                    </article>
+
+                    <article class="nota" data-nota="2">
+                        <p>Un momento para recordar...</p>
+                    </article>
+
+                    <article class="nota" data-nota="3">
+                        <p>Siempre hay algo bonito...</p>
+                    </article>
+
+                    <article class="nota" data-nota="4">
+                        <p>Pequeños momentos, grandes recuerdos...</p>
+                    </article>
+
+                    <article class="nota" data-nota="5">
+                        <p>Y muchos momentos más...</p>
+                    </article>
+
+                </div>
+
+            </figure>
+
+            <!-- Controles de la galería -->
+            <div class="controles">
+
+                <button
+                    type="button"
+                    id="btn-anterior"
+                    aria-label="Fotografía anterior"
+                >
+                    &#10094;
+                </button>
+
+                <button
+                    type="button"
+                    id="btn-pausa"
+                    aria-label="Pausar presentación"
+                >
+                    Pausar
+                </button>
+
+                <button
+                    type="button"
+                    id="btn-siguiente"
+                    aria-label="Fotografía siguiente"
+                >
+                    &#10095;
+                </button>
+
+            </div>
+
+        </main>
+
+        <!-- Parte inferior -->
+        <footer class="pie" data-profundidad="3">
+
+            <!-- Animales decorativos -->
+            <div
+                class="animales"
+                id="animales"
+                aria-hidden="true"
+            >
+
+                <div class="animal" data-animal="gato-calico">
+                    <img alt="">
+                </div>
+
+                <div class="animal" data-animal="gato-atigrado">
+                    <img alt="">
+                </div>
+
+                <div class="animal" data-animal="hamster">
+                    <img alt="">
+                </div>
+
+            </div>
+
+            <!-- Mensaje permanente -->
+            <section class="caja-mensaje">
+
+                <h2 class="titulo-mensaje">
+                    Un mensajito para ti
+                </h2>
+
+                <p id="mensaje">
+                    Entre tantos momentos que hemos compartido,
+                    siempre habrá uno nuevo que valga la pena recordar.
+                    Gracias por formar parte de esta pequeña historia.
+                    💗
+                </p>
+
+            </section>
+
+        </footer>
+
+    </div>
+
+    <!-- Punto de entrada de TypeScript -->
+    <script type="module" src="./src/ts/main.ts"></script>
+
+</body>
+
+</html>
