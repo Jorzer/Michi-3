@@ -357,16 +357,20 @@
     max-block-size: 48dvh;
   }
   .notas {
-    top: -1.5rem;
-    right: -0.5rem;
-    inline-size: clamp(12rem, 55vw, 15rem);
-  }
-  .nota {
-    padding: 12%;
-  }
-  .nota p {
-    font-size: clamp(1.65rem, 17cqi, 2.5rem);
-    line-height: 1.08;
+  top: -1rem;
+  right: -0.5rem;
+  /* Post-it más pequeño en móviles */
+  inline-size: clamp(9rem, 36vw, 11rem);
+}
+.nota {
+  padding: 10%;
+}
+.nota p {
+  /* Conservamos una letra grande */
+  font-size: clamp(1.65rem, 17cqi, 2.5rem);
+  line-height: 1.08;
+}
+ 
   }
   .animal {
     inline-size: 6rem;
