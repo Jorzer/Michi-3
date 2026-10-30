@@ -46,9 +46,14 @@
 .subtitulo {
   max-width: 38ch;
   margin-block-start: var(--espacio-xs);
-  font-size: var(--texto-m);
-  line-height: 1.5;
+
+  font-size: clamp(2rem, 3.5vw, 3.2rem);
+  line-height: 1.15;
+  font-weight: 700;
+
   color: var(--cafe);
+  text-wrap: balance;
+  overflow-wrap: anywhere;
 }
 
 /* ---------- 3. Galería y fotografía ---------- */
