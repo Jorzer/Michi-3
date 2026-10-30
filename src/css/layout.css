@@ -186,6 +186,7 @@
 }
 
 .nota {
+  container-type: inline-size;
   position: absolute;
   inset: 0;
 
@@ -225,6 +226,9 @@
 /* Evitar márgenes inesperados en los párrafos */
 
 .nota p {
+  font-size: clamp(1.15rem, 8cqw, 2rem);
+  line-height: 1.2;
+  text-align: center;
   margin: 0;
   overflow-wrap: anywhere;
 }

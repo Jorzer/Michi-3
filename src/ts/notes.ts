@@ -54,7 +54,7 @@ const COLECCIONES_DE_NOTAS: string[][] = [
 
   [
     "Estoy mejorando cada dia para ser mejor novio",
-    "Y si nos tomamos más fotos y las subo y te presumo?.",
+    "Y si nos tomamos más fotitos con caras random y dandote besitos y las presumo todos los dias?.",
     "Wannie me dijo que cuidara a Mama Mich por toda la vida.",
     "Alice se quejo conmigo de que no lo estoy haciendo bien y decidi mejorar para ser tu mejor compañia.",
     "Me encantaria seguir escribiendo una historia contigo"
