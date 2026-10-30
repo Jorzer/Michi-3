@@ -1,6 +1,5 @@
 /* ==========================================================================
    layout.css — estructura, componentes y animaciones
-   Orden:
    1. Contenedor y parallax
    2. Encabezado y título
    3. Galería y fotografía
@@ -119,13 +118,12 @@
 /* Contenedor de los post-its */
 .notas {
   position: absolute;
-  top: -2rem;
-  right: -2rem;
-  inline-size: clamp(10rem, 28vw, 14rem);
+  top: -2.5rem;
+  right: -2.5rem;
+  inline-size: clamp(12rem, 32vw, 16rem);
   aspect-ratio: 1;
   z-index: var(--capa-nota);
   pointer-events: none;
-  /* Permite adaptar el texto al tamaño del post-it */
   container-type: inline-size;
 }
 /* Post-it individual */
@@ -134,7 +132,7 @@
   inset: 0;
   display: grid;
   place-items: center;
-  padding: 1.4rem 1rem 1rem;
+  padding: 1.2rem;
   text-align: center;
   color: var(--cafe);
   background: linear-gradient(
@@ -151,15 +149,15 @@
   opacity: 0;
   visibility: hidden;
 }
-/* Texto adaptable al ancho del contenedor */
+/* Texto adaptable al tamaño del post-it */
 .nota p {
   width: 100%;
   margin: 0;
-  font-size: clamp(1.1rem, 10cqi, 1.75rem);
-  line-height: 1.2;
-  font-weight: 600;
+  font-size: clamp(1.5rem, 12cqi, 2.15rem);
+  line-height: 1.15;
+  font-weight: 700;
   text-align: center;
-  overflow-wrap: break-word;
+  overflow-wrap: anywhere;
   text-wrap: balance;
 }
 /* Inclinación alternada */
@@ -366,15 +364,15 @@
     max-block-size: 48dvh;
   }
   .notas {
-    top: -1.2rem;
-    right: -0.5rem;
-    inline-size: clamp(9.5rem, 42vw, 12rem);
+    top: -1.5rem;
+    right: -0.7rem;
+    inline-size: clamp(10.5rem, 45vw, 13rem);
   }
   .nota {
-    padding: 1.2rem 0.8rem 0.8rem;
+    padding: 1rem;
   }
   .nota p {
-    font-size: clamp(1.1rem, 10cqi, 1.55rem);
+    font-size: clamp(1.35rem, 12cqi, 1.75rem);
   }
   .animal {
     inline-size: 6rem;
@@ -406,7 +404,7 @@
     right: -1rem;
   }
   .nota p {
-    font-size: clamp(1rem, 9cqi, 1.3rem);
+    font-size: clamp(1.1rem, 12cqi, 1.4rem);
   }
   .pie {
     inline-size: min(100%, 30rem);
