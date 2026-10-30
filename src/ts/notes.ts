@@ -63,7 +63,7 @@ const COLECCIONES_DE_NOTAS: string[][] = [
   [
     "Hagamos que Jorgito y Michi sean felices juntos.",
     "Luego de ser tu FEFE puedo ser tu Bovio?.",
-    "Eres la mejor chica del mundo por favor no te rindas y si te cansas siempre estaré para ayudarte a seguir adelante.",
+    "Volvamos a compartir nuestras cartas de Pokemon como la pareja de Umbreon y Espeon que somos",
     "Silver me conto una noche que tu me amabas, yo le dije que yo te amaba más y peleo conmigo.",
     "Eres mamá gata, puedo seguir siendo papá gato?"
   ],
@@ -71,7 +71,7 @@ const COLECCIONES_DE_NOTAS: string[][] = [
   [
     "Tú eres mi moto mami, puedo ser tu carro papi?",
     "Me voy a meter a un jardin a robar claveles para amarte un ramo gigante.",
-    "Y si compartimos nuestroz corazones cafes por toda la vida_",
+    "Y si compartimos nuestroz corazones cafes por toda la vida?",
     "Y si te acaricio la espalda sera que puedo llegar a acariciarte el alma?",
     "Nunca quise tener una familia... Hasta que la forme contigo"
   ]
