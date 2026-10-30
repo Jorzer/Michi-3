@@ -40,7 +40,7 @@ const COLECCIONES_DE_NOTAS: string[][] = [
     "Quiero volver a conquistarte Bailando",
     "Eres el pedacito de vida que me faltaba.",
     "Vuelve a robarme mi celular y llenarla de tus fotos random.",
-    "Gracias por estar aquí y entenderme.",
+    "Me aprendere los dialogos de tu pelicula favorita para conquistarte con ellos.",
     "Gracias por aprender de Pokemon por mi"
   ],
 
@@ -49,7 +49,7 @@ const COLECCIONES_DE_NOTAS: string[][] = [
     "Quiero sacarte tantas sonrisas que te acuerdes de como sonreia Michi.",
     "Enseñame a manejar para llevarte hasta el fin del mundo.",
     "Podemos ser dos viejitos mañosos y que tu mandes en la casa?.",
-    "Quiero crear más recuerdos contigo."
+    "Quiero crear más recuerdos a tu lado y que de viejtos nos acordemos de ellos."
   ],
 
   [
