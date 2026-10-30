@@ -370,7 +370,6 @@
   font-size: clamp(1.65rem, 17cqi, 2.5rem);
   line-height: 1.08;
 }
- 
   }
   .animal {
     inline-size: 6rem;
@@ -379,7 +378,6 @@
   .caja-mensaje {
     padding: var(--espacio-m);
   }
-}
 
 /* Celular acostado */
 @media (max-height: 520px) and (orientation: landscape) {
