@@ -20,11 +20,11 @@
  
 // ---------- 1. Configuración ----------
  
-const ESPERA_MINIMA = 4000;
-const ESPERA_MAXIMA = 10000;
+const ESPERA_MINIMA = 3000;
+const ESPERA_MAXIMA = 5000;
  
-const PERMANENCIA_MINIMA = 2500;
-const PERMANENCIA_MAXIMA = 5500;
+const PERMANENCIA_MINIMA = 3000;
+const PERMANENCIA_MAXIMA = 5000;
  
 // Vite sirve el contenido de public desde la raíz.
 // Los archivos están en public/recursos/animales/.
