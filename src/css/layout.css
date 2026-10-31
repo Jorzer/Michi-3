@@ -94,6 +94,16 @@
   box-shadow: var(--sombra-foto);
  
   rotate: -1.5deg;
+
+  /* Altura de la franja donde se asoman los animales
+     (coincide con el animal más grande). */
+  --animal-alto-max: 12.5rem;
+
+  /* Reserva el espacio que ocupan los animales sobre el marco
+     para que no tapen el título ni el subtítulo. */
+  margin-block-start: calc(
+    var(--animal-alto-max) - 1.2rem - var(--espacio-l)
+  );
 }
  
 .foto {
@@ -390,15 +400,19 @@
 .animales {
   position: absolute;
  
+  /* Los animales se apoyan en el borde superior del marco de la foto. */
   inset-inline: 0;
   bottom: calc(100% - 1.2rem);
  
-  block-size: 6rem;
+  block-size: var(--animal-alto-max, 12.5rem);
  
   z-index: var(--capa-animal);
  
   pointer-events: none;
-  overflow: hidden;
+ 
+  /* Solo se recorta por abajo (para que salgan desde el borde);
+     a los lados y arriba no se corta nada. */
+  clip-path: inset(-30rem -30rem 0 -30rem);
 }
  
 .animal {
@@ -407,8 +421,8 @@
   bottom: 0;
   left: var(--animal-x, 50%);
  
-  inline-size: 7rem;
-  block-size: 6rem;
+  inline-size: var(--animal-ancho, 14rem);
+  block-size: var(--animal-alto, 11rem);
  
   translate: -50% 0;
   transform: translateY(105%);
@@ -417,15 +431,21 @@
 }
  
 .animal[data-animal="gato-calico"] {
-  --animal-x: 18%;
+  --animal-x: 30%;
+  --animal-ancho: 14.5rem;
+  --animal-alto: 11.5rem;
 }
  
 .animal[data-animal="gato-atigrado"] {
   --animal-x: 50%;
+  --animal-ancho: 15.5rem;
+  --animal-alto: 12.5rem;
 }
  
 .animal[data-animal="hamster"] {
-  --animal-x: 82%;
+  --animal-x: 70%;
+  --animal-ancho: 12.5rem;
+  --animal-alto: 10rem;
 }
  
 .animal > img {
@@ -496,9 +516,23 @@
     gap: var(--espacio-xs);
   }
  
-  .animal {
-    inline-size: 6rem;
-    block-size: 5.5rem;
+  .foto-marco {
+    --animal-alto-max: 10rem;
+  }
+ 
+  .animal[data-animal="gato-calico"] {
+    --animal-ancho: 11rem;
+    --animal-alto: 9rem;
+  }
+ 
+  .animal[data-animal="gato-atigrado"] {
+    --animal-ancho: 11.5rem;
+    --animal-alto: 10rem;
+  }
+ 
+  .animal[data-animal="hamster"] {
+    --animal-ancho: 9.5rem;
+    --animal-alto: 8.3rem;
   }
  
   .caja-mensaje {
@@ -525,6 +559,22 @@
  
   .foto-marco {
     inline-size: min(100%, 28rem);
+    --animal-alto-max: 7.5rem;
+  }
+ 
+  .animal[data-animal="gato-calico"] {
+    --animal-ancho: 9rem;
+    --animal-alto: 6.8rem;
+  }
+ 
+  .animal[data-animal="gato-atigrado"] {
+    --animal-ancho: 9.5rem;
+    --animal-alto: 7.5rem;
+  }
+ 
+  .animal[data-animal="hamster"] {
+    --animal-ancho: 7.8rem;
+    --animal-alto: 6rem;
   }
  
   .notas {
