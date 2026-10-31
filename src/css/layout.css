@@ -531,7 +531,7 @@
   }
  
   .animal[data-animal="hamster"] {
-  --animal-x: 62%;
+  --animal-x: 60%;
   --animal-ancho: 9.5rem;
   --animal-alto: 8.3rem;
 }
