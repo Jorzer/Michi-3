@@ -2,11 +2,40 @@
   "imagenes": [
     {
       "archivo": "img_1.jpg",
-      "descripcion": "Un recuerdo especial"
+      "descripcion": "Besito"
     },
     {
       "archivo": "img_2.jpg",
-      "descripcion": "Besito"
+      "descripcion": "Tu primera Cartita"
+    },
+    {
+      "archivo": "img_3.jpg",
+      "descripcion": "De las primeras Citas en MC"
+    },
+    {
+      "archivo": "img_4.jpg",
+      "descripcion": "Tu primera cachapa"
+    },
+    {
+      "archivo": "img_5.jpg",
+      "descripcion": "Michiquita con Michiguiro"
+    },
+    {
+      "archivo": "img_6.jpg",
+      "descripcion": "Pucherosa"
+    },
+    {
+      "archivo": "img_7.jpg",
+      "descripcion": "Cita otaku"
+    },
+    {
+      "archivo": "img_8.jpg",
+      "descripcion": "La Michi mas sonriente"
+    },
+    {
+      "archivo": "img_9.jpg",
+      "descripcion": "Quiero que te sientas tan amada como Michi se sentia"
     }
+
   ]
 }
