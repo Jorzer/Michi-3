@@ -505,9 +505,9 @@
     padding: 10%;
   }
  
-  .nota p {
-  font-size: clamp(0.95rem, 10.5cqi, 1.35rem);
-  line-height: 1.15;
+ .nota p {
+  font-size: clamp(1.15rem, 12cqi, 1.55rem);
+  line-height: 1.12;
   max-height: 100%;
   overflow-wrap: anywhere;
   text-wrap: balance;
