@@ -494,20 +494,19 @@
   }
  
   .notas {
-    top: 66.666%;
-    right: auto;
-    bottom: auto;
-    left: -1rem;
- 
-    inline-size: clamp(9rem, 34vw, 11rem);
-  }
- 
+  top: 66.666%;
+  right: auto;
+  bottom: auto;
+  left: -1rem;
+
+  inline-size: clamp(10rem, 40vw, 12rem);
+}
   .nota {
     padding: 10%;
   }
  
   .nota p {
-  font-size: clamp(0.78rem, 9cqi, 1.15rem);
+  font-size: clamp(0.95rem, 10.5cqi, 1.35rem);
   line-height: 1.15;
   max-height: 100%;
   overflow-wrap: anywhere;
