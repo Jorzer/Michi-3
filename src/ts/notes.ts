@@ -62,7 +62,7 @@ const COLECCIONES_DE_NOTAS: string[][] = [
  
     "Vuelve a robarme mi celular y llenarla de tus fotos random.",
  
-    "Me aprendere los dialogos de tu pelicula favorita para conquistarte con ellos.",
+    "Quiero conquistarte de nuevo",
  
     "Gracias por aprender de Pokemon por mi"
  
@@ -90,7 +90,7 @@ const COLECCIONES_DE_NOTAS: string[][] = [
  
     "Wannie me dijo que cuidara a Mama Mich por toda la vida.",
  
-    "Alice se quejo conmigo de que no lo estoy haciendo bien y decidi mejorar para ser tu mejor compañia.",
+    "Alice me dijo que luchara por ti",
  
     "Me encantaria seguir escribiendo una historia contigo"
  
@@ -102,9 +102,9 @@ const COLECCIONES_DE_NOTAS: string[][] = [
  
     "Luego de ser tu FEFE puedo ser tu Bovio?.",
  
-    "Volvamos a compartir nuestras cartas de Pokemon como la pareja de Umbreon y Espeon que somos",
+    "Compartamos las cartas de Umbreon y Espeon",
  
-    "Silver me conto una noche que tu me amabas, yo le dije que yo te amaba más y peleo conmigo.",
+    "Silver dice que tu me amas mas, pero yo te amo mas",
  
     "Eres mamá gata, puedo seguir siendo papá gato?"
  
@@ -118,9 +118,9 @@ const COLECCIONES_DE_NOTAS: string[][] = [
  
     "Y si compartimos nuestroz corazones cafes por toda la vida?",
  
-    "Y si te acaricio la espalda sera que puedo llegar a acariciarte el alma?",
+    "Si te acaricio la espalda, puedo llegarte a acariciarte el alma?",
  
-    "Nunca quise tener una familia... Hasta que la forme contigo"
+    "Gracias a ti quiero tener una familia"
  
   ]
  
