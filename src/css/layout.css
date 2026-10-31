@@ -507,9 +507,12 @@
   }
  
   .nota p {
-    font-size: clamp(1.65rem, 17cqi, 2.5rem);
-    line-height: 1.08;
-  }
+  font-size: clamp(0.78rem, 9cqi, 1.15rem);
+  line-height: 1.15;
+  max-height: 100%;
+  overflow-wrap: anywhere;
+  text-wrap: balance;
+}
  
   .controles {
     margin-block-start: 2.5rem;
