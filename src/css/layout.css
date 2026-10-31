@@ -531,9 +531,10 @@
   }
  
   .animal[data-animal="hamster"] {
-    --animal-ancho: 9.5rem;
-    --animal-alto: 8.3rem;
-  }
+  --animal-x: 62%;
+  --animal-ancho: 9.5rem;
+  --animal-alto: 8.3rem;
+}
  
   .caja-mensaje {
     padding: var(--espacio-m);
