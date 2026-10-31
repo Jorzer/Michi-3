@@ -536,13 +536,14 @@
     --animal-alto: 9rem;
   }
  
-  .animal[data-animal="gato-atigrado"] {
-    --animal-ancho: 11.5rem;
-    --animal-alto: 10rem;
-  }
- 
+  .animal[data-animal="gato-calico"] {
+  --animal-x: 20%;
+  --animal-ancho: 11rem;
+  --animal-alto: 9rem;
+}
+
   .animal[data-animal="hamster"] {
-  --animal-x: 60%;
+  --animal-x: 56%;
   --animal-ancho: 9.5rem;
   --animal-alto: 8.3rem;
 }
