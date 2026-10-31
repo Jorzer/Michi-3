@@ -482,6 +482,15 @@
   .encabezado {
     max-width: 100%;
   }
+
+  .titulo {
+    font-size: clamp(3.4rem, 11vw, 5rem);
+  }
+
+   .subtitulo {
+    font-size: clamp(2.3rem, 7vw, 3.5rem);
+    line-height: 1.1;
+  }
  
   .foto-marco {
     inline-size: min(100%, 36rem);
